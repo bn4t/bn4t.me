@@ -5,7 +5,7 @@ theme = "minimal"
 
 [params]
     author = "bn4t"
-    description = "A personal website"
+    description = "Personal website from me"
     githubUsername = "bn4t"
     accent = "#444"
     showBorder = true
