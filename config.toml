@@ -55,6 +55,6 @@ theme = "minimal"
     weight = 4
 
 [[menu.icon]]
-    url = "https://www.stackoverflow.com/bn4t/"
+    url = "https://www.stackoverflow.com/users/8392636/bn4t"
     name = "stack-overflow"
     weight = 5
