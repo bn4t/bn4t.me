@@ -30,4 +30,5 @@ Thankfully after a bit of research and try & error I found out that Netlify appe
 
 Fortunately however the hugo version Netlify uses is adjustable using an environement variable which can be set in the web interface. Setting the version variable to the on I use locally finally solved the error.
 
+---
 Website Repository: https://gitlab.com/bn4t/bn4t.me
