@@ -14,9 +14,8 @@ review:
     paths:
       - environment_url.txt
   only:
-    - branches
-  except:
     - master
+
 
 performance:
   stage: performance
