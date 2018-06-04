@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Placeholder on bn4t</title>
+    <link>http://example.com/tags/placeholder/</link>
+    <description>Recent content in Placeholder on bn4t</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 04 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://example.com/tags/placeholder/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Don&#39;t make it look so empty</title>
+      <link>http://example.com/post/dont-make-it-look-so-empty/</link>
+      <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.com/post/dont-make-it-look-so-empty/</guid>
+      <description>This is just here to prevent a 404 error.
+More is to come&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>
