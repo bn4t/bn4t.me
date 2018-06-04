@@ -1,9 +1,14 @@
-image: dettmering/hugo-build
-
+# All available Hugo versions are listed here: https://gitlab.com/pages/hugo/container_registry
+image: registry.gitlab.com/pages/hugo:latest
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
+test:
+  script:
+  - hugo
+  except:
+  - master
 
 pages:
   script:
@@ -12,10 +17,4 @@ pages:
     paths:
     - public
   only:
-  - master
-  
-test:
-  script:
-  - hugo
-  except:
   - master
