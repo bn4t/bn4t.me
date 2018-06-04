@@ -1,13 +1,13 @@
 baseURL = "http://example.com/"
 languageCode = "en-us"
-title = "Minimal"
+title = "bn4t"
 theme = "minimal"
 
 [params]
     author = "bn4t"
     description = "Personal site of me."
     githubUsername = "bn4t"
-    accent = "red"
+    accent = "#444"
     showBorder = true
     backgroundColor = "white"
     font = "Raleway" # should match the name on Google Fonts!
@@ -40,14 +40,19 @@ theme = "minimal"
     weight = 1
 
 [[menu.icon]]
+    url = "https://gitlab.com/bn4t/"
+    name = "gitlab"
+    weight = 2
+
+[[menu.icon]]
     url = "https://github.com/bn4t/"
     name = "github"
-    weight = 2
+    weight = 3
 
 [[menu.icon]]
     url = "https://twitter.com/_bn4t/"
     name = "twitter"
-    weight = 3
+    weight = 4
 
 [[menu.icon]]
     url = "https://www.stackoverflow.com/bn4t/"
