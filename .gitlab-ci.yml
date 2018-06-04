@@ -8,7 +8,7 @@ review:
     name: review/$CI_COMMIT_REF_SLUG
     url: http://$CI_COMMIT_REF_SLUG.$APPS_DOMAIN
   script:
-    - run_deploy_script
+    - sudo apt update && sudo apt-get install hugo -y
     - echo $CI_ENVIRONMENT_URL > environment_url.txt
   artifacts:
     paths:
