@@ -12,7 +12,7 @@ stages:
 build:
   stage: build
   script:
-    - sudo apt install snapd -y
+    - apt install snapd -y
     - snap install hugo --classic # use snap packe for up to date hugo version 
     - hugo
   artifacts:
