@@ -1,5 +1,8 @@
 image: ubuntu:16.04
 
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
 stages:
   - build
   - purge_cache
