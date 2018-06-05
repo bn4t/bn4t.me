@@ -1,10 +1,28 @@
+image: ubuntu:16.04
+
 stages:
-  - cache_purge
+  - build
+  - purge_cache
+
+
+build:
+  stage: build
+  script:
+    - sudo apt install snapd -y
+    - snap install hugo --classic # use snap packe for up to date hugo version 
+    - hugo
+  artifacts:
+    name: "${CI_PROJECT_PATH}_${CI_JOB_STAGE}_${CI_COMMIT_REF_NAME}_${CI_COMMIT_SHA}"
+    paths:
+      - public
+    expire_in: 3 month
+
+
 
 # purge cloudflare cache
-cache_purge:
-  image: busybox:latest
-  stage: cache_purge
+purge_cache:
+  stage: purge_cache
   script:
   - ./gitlab-ci/purge_cache.sh
+
 
