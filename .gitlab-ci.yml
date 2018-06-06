@@ -1,4 +1,3 @@
-
 stages:
   - build
   - code_quality
@@ -44,7 +43,7 @@ code_quality:
 
 # purge cloudflare cache
 purge_cache:
-  image: busybox:latest
+  image: appropriate/curl:latest
   stage: purge_cache
   script:
     - sh gitlab-ci/purge_cache.sh
