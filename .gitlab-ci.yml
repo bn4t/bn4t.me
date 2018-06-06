@@ -12,9 +12,9 @@ stages:
 build:
   stage: build
   script:
-    - apt update
-    - apt install snapd -y
-    - snap install hugo --classic # use snap packe for up to date hugo version 
+    - wget https://github.com/gohugoio/hugo/releases/download/v0.41/hugo_0.41_Linux-64bit.deb -O hugo.deb
+    - dpkg -i hugo.deb
+    - rm hugo.deb
     - hugo
   artifacts:
     name: "${CI_PROJECT_PATH}_${CI_JOB_STAGE}_${CI_COMMIT_REF_NAME}_${CI_COMMIT_SHA}"
