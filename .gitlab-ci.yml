@@ -12,6 +12,8 @@ stages:
 build:
   stage: build
   script:
+    - apt update
+    - apt install wget -y
     - wget https://github.com/gohugoio/hugo/releases/download/v0.41/hugo_0.41_Linux-64bit.deb -O hugo.deb
     - dpkg -i hugo.deb
     - rm hugo.deb
