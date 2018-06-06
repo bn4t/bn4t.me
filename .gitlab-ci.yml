@@ -3,7 +3,7 @@ stages:
   - purge_cache
 
 
-build:
+pages:
   image: ubuntu:16.04
   stage: build
   variables:
@@ -19,7 +19,7 @@ build:
     name: "${CI_PROJECT_PATH}_${CI_JOB_STAGE}_${CI_COMMIT_REF_NAME}_${CI_COMMIT_SHA}"
     paths:
       - public
-    expire_in: 3 month
+    expire_in: 4 month
 
 # purge cloudflare cache
 purge_cache:
