@@ -1,7 +1,6 @@
 image: ubuntu:16.04
 
-variables:
-  GIT_SUBMODULE_STRATEGY: recursive
+
 
 stages:
   - build
@@ -11,6 +10,8 @@ stages:
 
 build:
   stage: build
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
   script:
     - apt update
     - apt install wget -y
@@ -47,7 +48,7 @@ code_quality:
 purge_cache:
   stage: purge_cache
   script:
-    - ./gitlab-ci/purge_cache.sh
+    - sh gitlab-ci/purge_cache.sh
   only:
     - master
 
