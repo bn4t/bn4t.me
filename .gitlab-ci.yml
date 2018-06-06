@@ -3,7 +3,7 @@ stages:
   - purge_cache
 
 
-pages:
+build:
   image: ubuntu:16.04
   stage: build
   variables:
