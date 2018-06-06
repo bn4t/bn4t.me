@@ -16,17 +16,17 @@ theme = "minimal"
     highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
 
 [[menu.main]]
-    url = "/"
+    url = "./"
     name = "Home"
     weight = 1
 
 [[menu.main]]
-    url = "/post/"
+    url = "post/"
     name = "Posts"
     weight = 2
 
 [[menu.main]]
-    url = "/project/"
+    url = "project/"
     name = "Projects"
     weight = 3
 
