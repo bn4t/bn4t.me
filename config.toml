@@ -58,10 +58,4 @@ theme = "minimal"
     url = "https://www.stackoverflow.com/users/8392636/bn4t"
     name = "stack-overflow"
     weight = 5
-
-[[menu.icon]]
-    url = "http://bgfatksyqhuobs6zy6p4yvxbyltyydplrrohfavrp3vf5dltf7khb5id.onion/"
-    name = "eye-slash"
-    weight = 6
-    
     
