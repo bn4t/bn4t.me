@@ -4,6 +4,7 @@ stages:
 
 
 pages:
+  stage: pages
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
   image: registry.gitlab.com/pages/hugo:latest
