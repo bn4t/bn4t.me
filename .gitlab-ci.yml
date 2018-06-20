@@ -1,25 +1,20 @@
 stages:
-  - build
+  - pages
   - purge_cache
 
 
-build:
-  image: ubuntu:16.04
-  stage: build
+pages:
   variables:
     GIT_SUBMODULE_STRATEGY: recursive
+  image: registry.gitlab.com/pages/hugo:latest
   script:
-    - apt update
-    - apt install wget -y
-    - wget https://github.com/gohugoio/hugo/releases/download/v0.41/hugo_0.41_Linux-64bit.deb -O hugo.deb
-    - dpkg -i hugo.deb
-    - rm hugo.deb
-    - hugo
+  - hugo
   artifacts:
-    name: "${CI_PROJECT_PATH}_${CI_JOB_STAGE}_${CI_COMMIT_REF_NAME}_${CI_COMMIT_SHA}"
     paths:
-      - public
-    expire_in: 4 month
+    - public
+  only:
+  - master
+
 
 # purge cloudflare cache
 purge_cache:
