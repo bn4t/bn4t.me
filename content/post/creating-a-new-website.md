@@ -32,3 +32,7 @@ However the hugo version Netlify uses is adjustable using an environement variab
 
 ---
 Website Repository: https://gitlab.com/bn4t/bn4t.me
+
+---
+
+**Edit:** I later switched to Gitlab pages instead of Netlify for the sake of simplicity.
