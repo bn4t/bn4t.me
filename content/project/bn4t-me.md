@@ -10,4 +10,6 @@ draft: false
 
 This website is a small project to create a good looking web presence for myself.
 
+Source: https://gitlab.com/bn4t/bn4t.me
+
 More is to come...
