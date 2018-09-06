@@ -38,4 +38,4 @@ Website Repository: https://gitlab.com/bn4t/bn4t.me
 ### Update
 
 Later on I switched to Gitlab pages for automatic deployment, just because it's simpler and everything is in the same place. 
-I also put cloudflare in front of my Website to enable their cdn and caching, which signifficantly decreased the loading time of the page (especially the caching).
+I also put cloudflare in front of my Website to enable their cdn and caching, which significantly decreased the loading time of the page (especially the caching).
