@@ -9,7 +9,8 @@ pages:
     GIT_SUBMODULE_STRATEGY: recursive
   image: registry.gitlab.com/pages/hugo:latest
   script:
-  - hugo
+    - git submodule update --init --recursive
+    - hugo
   artifacts:
     paths:
     - public
