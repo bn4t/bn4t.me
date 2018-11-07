@@ -1,15 +1,10 @@
 stages:
-  - pages
-  - purge_cache
+  - build
 
-
-pages:
-  stage: pages
-  variables:
-    GIT_SUBMODULE_STRATEGY: recursive
+build:
+  stage: build
   image: registry.gitlab.com/pages/hugo:latest
   script:
-    - git submodule update --init --recursive
     - hugo
   artifacts:
     paths:
@@ -18,13 +13,5 @@ pages:
   - master
 
 
-# purge cloudflare cache
-purge_cache:
-  image: appropriate/curl:latest
-  stage: purge_cache
-  script:
-    - sh gitlab-ci/purge_cache.sh
-  only:
-    - master
 
 
