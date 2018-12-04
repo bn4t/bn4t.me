@@ -40,7 +40,7 @@ theme = "minimal"
     weight = 1
 
 [[menu.icon]]
-    url = "https://gitlab.com/bn4t/"
+    url = "https://git.bn4t.me/root"
     name = "gitlab"
     weight = 2
 
