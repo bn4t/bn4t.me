@@ -206,6 +206,7 @@ sudo wg-quick down wg0
 ---
 
 Links that have been useful while creating this post:
+
 - https://wireguard.com
 - https://www.ckn.io/blog/2017/11/14/wireguard-vpn-typical-setup/
 
