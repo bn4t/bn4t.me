@@ -1,6 +1,6 @@
 baseURL = "https://bn4t.me/"
 languageCode = "en-us"
-title = "bn4t"
+title = "bn4t.me"
 theme = "minimal"
 
 [params]
@@ -11,9 +11,6 @@ theme = "minimal"
     showBorder = true
     backgroundColor = "white"
     font = "Impact, Arial" 
-    highlight = true
-    highlightStyle = "solarized-dark"
-    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
 
 [[menu.main]]
     url = "/"
