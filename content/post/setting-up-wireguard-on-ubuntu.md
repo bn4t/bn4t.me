@@ -29,7 +29,6 @@ Since Wireguard uses a kernel module we also need to install the `linux-headers`
 sudo add-apt-repository ppa:wireguard/wireguard
 apt-get update
 apt-get install wireguard-dkms wireguard-tools linux-headers-$(uname -r)
-
 ````
 
 ### Generate the server keys
