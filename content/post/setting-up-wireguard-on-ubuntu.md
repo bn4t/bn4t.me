@@ -2,14 +2,22 @@
 title: "Setting up Wireguard on Ubuntu"
 date: 2018-12-05
 tags: ["wireguard","vpn","ubuntu"]
-draft: true
+draft: false
 ---
 
+
+
 ## Intro
+
+> WireGuard is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography. It aims to be faster, simpler, leaner, and more useful than IPSec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it is now cross-platform and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.
+>
+> Source: https://wireguard.com
 
 Since there didn't seem many [Wireguard](https://wireguard.com) tutorials on the internet, I thought I'd create one myself.
 
 This is a tutorial on how to set up a Wireguard VPN on Ubuntu.
+
+
 
 ### Add PPA
 
@@ -57,7 +65,7 @@ ListenPort = 5555                           # This is the listen port of the wir
 
 For this step you need to have Wireguard installed on your client. For Ubuntu you can follow the installation steps from above. Instructions for other platforms can be found on [the official Wireguard Website](https://www.wireguard.com/install/).
 
-Next we execute following command in the `/etc/wireguard/` directory to generate the client's private and public key.
+On the client we execute following command in the `/etc/wireguard/` directory to generate the client's private and public key.
 
 ````
 sudo wg genkey | sudo tee privatekey | sudo wg pubkey > publickey
@@ -90,7 +98,7 @@ AllowedIPs = 10.200.200.2/32                # Define which IPs that the client i
 ````
 
 
-### Enable IP forwarding on the server
+#### Enable IP forwarding on the server
 
 To enable IP forwarding on the server we need to edit the `/etc/sysctl.conf` file and set following line:
 
@@ -106,7 +114,7 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 ````
 
 
-### Configure firewall rules on the server
+#### Configure firewall rules on the server
 
 We need to set up a few firewall rules to manage our VPN traffic.
 
@@ -143,7 +151,9 @@ iptables -t nat -A POSTROUTING -s 10.200.200.0/24 -o eth0 -j MASQUERADE
 To make these IPtable rules persistent we need to install the `iptables-persistent` package and enable it on boot.
 
 ````
-sudo apt-get install iptables-persistent && systemctl enable netfilter-persistent && netfilter-persistent save
+sudo apt-get install iptables-persistent
+sudo systemctl enable netfilter-persistent
+sudo netfilter-persistent save
 ````
 
 
@@ -156,5 +166,30 @@ To enable the Wireguard interfaces we need to execute on both the client and the
 sudo wg-quick up wg0
 ````
 
+
+
 We can check the state of the VPN connection by executing `sudo wg`.
+
+
+## Wrapping up
+
+There are some points when using Wireguard that should be noted. 
+The VPN connection will remain persistent across networks. Unless you specifically bring the interface down or shutdown the computer, you will always be on the VPN.
+
+To enable the Wireguard interfaces automatically on boot you can execute following command (recommended on the server):
+````
+sudo systemctl enable wg-quick@wg0
+````
+
+You should now have a secure VPN connection in place. You can confirm this by checking your IP on sites such as https://icanhazip.com.
+
+If you want to disconnect from the VPN you have to disable the Wireguard interface.
+````
+sudo wg-quick down wg0
+````
+---
+
+Links that have been useful while creating this post:
+- https://wireguard.com
+- https://www.ckn.io/blog/2017/11/14/wireguard-vpn-typical-setup/
 
