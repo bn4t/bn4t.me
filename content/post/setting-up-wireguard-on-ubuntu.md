@@ -54,9 +54,14 @@ This config file looks like this:
 
 ````
 [Interface]
-Address = 10.200.200.1/24                   # The address and CIDR of the virtual interface wg0
-PrivateKey = <insert server_private_key>    # Replace this with the private key found in /etc/wireguard/privatekey
-ListenPort = 5555                           # This is the listen port of the wireguard server. Can be any port you wish.
+# The address and CIDR of the virtual interface wg0
+Address = 10.200.200.1/24
+
+# Replace this with the private key found in /etc/wireguard/privatekey
+PrivateKey = <insert server_private_key>
+
+# This is the listen port of the wireguard server. Can be any port you wish.
+ListenPort = 5555
 ````
 
 
@@ -76,13 +81,21 @@ This config file looks like this:
 
 ````
 [Interface]
-Address = 10.200.200.2/32                   # The address and CIDR of the virtual interface wg0
-PrivateKey = <insert client_private_key>    # Replace this with the private key found in /etc/wireguard/privatekey
+# The address and CIDR of the virtual interface wg0
+Address = 10.200.200.2/32
+
+# Replace this with the private key found in /etc/wireguard/privatekey
+PrivateKey = <insert client_private_key>
 
 [Peer]
-PublicKey = <insert server_public_key>      # Insert the public key found on the server in the /etc/wireguard/publickey file
-Endpoint = <insert server_address>:5555     # Address and port of the server
-AllowedIPs = 0.0.0.0/0                      # Define an IP range to route through the Wireguard tunnel. 0.0.0.0/0 tunnels all ipv4 traffic through wireguard
+# Insert the public key found on the server in the /etc/wireguard/publickey file
+PublicKey = <insert server_public_key>
+
+# Address and port of the server
+Endpoint = <insert server_address>:5555
+
+# Define an IP range to route through the Wireguard tunnel. 0.0.0.0/0 tunnels all ipv4 traffic through wireguard
+AllowedIPs = 0.0.0.0/0
 ````
 
 
@@ -92,8 +105,11 @@ Before we can start the VPN tunnel we need to add following section to the `/etc
 
 ````
 [Peer]
-PublicKey = <insert client_public_key>      # the client's public key. Found in the /etc/wireguard/publickey file on the client
-AllowedIPs = 10.200.200.2/32                # Define which IPs that the client is allowed to be in the virtual network
+# The client's public key. Found in the /etc/wireguard/publickey file on the client
+PublicKey = <insert client_public_key>
+
+# Define which IPs that the client is allowed to be in the virtual network
+AllowedIPs = 10.200.200.2/32
 ````
 
 
