@@ -94,7 +94,8 @@ PublicKey = <insert server_public_key>
 # Address and port of the server
 Endpoint = <insert server_address>:5555
 
-# Define an IP range to route through the Wireguard tunnel. 0.0.0.0/0 tunnels all ipv4 traffic through wireguard
+# Define an IP range to route through the Wireguard tunnel. 
+# The 0.0.0.0/0 range tunnels all ipv4 traffic through wireguard
 AllowedIPs = 0.0.0.0/0
 ````
 
