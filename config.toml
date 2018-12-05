@@ -1,63 +1,61 @@
 baseURL = "https://bn4t.me/"
 languageCode = "en-us"
 title = "bn4t.me"
-theme = "minimal"
+name = "bn4t"
+theme = "hermit"
+pygmentsCodefences  = true
+pygmentsUseClasses = true
+enableEmoji = true # Shorthand emojis in content files - https://gohugo.io/functions/emojify/
+
+[author]
+  name = "bn4t"
+
+
+[blackfriday]
+  hrefTargetBlank = true
+
+
+[taxonomies]
+  tag = "tags"
+  category = "" # Categories are disabled by default.
+
 
 [params]
-    author = "bn4t"
-    description = "Personal website"
-    githubUsername = "bn4t"
-    accent = "#444"
-    showBorder = true
-    backgroundColor = "white"
-    font = "Impact, Arial" 
+  homeSubtitle = "A personal website"
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04 -0700"
+  footerCopyright = ' &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
 
-[[menu.main]]
-    url = "/"
-    name = "Home"
-    weight = 1
+  # Social Icons
+  # Check https://github.com/Track3/hermit#social-icons for more info.
+  [[params.social]] 
+    name = "gitlab" 
+    url = "https://git.bn4t.me/root"
+
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/bn4t"
+
+  [[params.social]]
+    name = "twitter"
+    url = "https://twitter.com/_bn4t"
+
+  [[params.social]]
+    name = "email"
+    url = "mailto:info@apply55gx.com"
+
+
 
 [[menu.main]]
     url = "/post/"
     name = "Posts"
-    weight = 2
+    weight = 1
 
 [[menu.main]]
     url = "/project/"
     name = "Projects"
-    weight = 3
-
-# Social icons to be shown on the right-hand side of the navigation bar
-# The "name" field should match the name of the icon to be used
-# The list of available icons can be found at http://fontawesome.io/icons/
-
-[[menu.icon]]
-    url = "mailto:info@apply55gx.com"
-    name = "envelope-o"
-    weight = 1
-
-[[menu.icon]]
-    url = "https://git.bn4t.me/root"
-    name = "gitlab"
     weight = 2
 
-[[menu.icon]]
-    url = "https://github.com/bn4t/"
-    name = "github"
-    weight = 3
-
-[[menu.icon]]
-    url = "https://toot.cafe/@bn4t"
-    name = "mastodon"
-    weight = 4
-
-[[menu.icon]]
-    url = "https://twitter.com/_bn4t/"
-    name = "twitter"
-    weight = 5
-
-[[menu.icon]]
-    url = "https://www.stackoverflow.com/users/8392636/bn4t"
-    name = "stack-overflow"
-    weight = 6
     
