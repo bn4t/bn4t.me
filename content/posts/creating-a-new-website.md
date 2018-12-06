@@ -39,3 +39,7 @@ Website Repository: https://git.bn4t.me/root/bn4t.me
 
 Later on I switched to Gitlab pages for automatic deployment, just because it's simpler and everything is in the same place. 
 I also put cloudflare in front of my Website to enable their cdn and caching, which significantly decreased the loading time of the page (especially the caching).
+
+### Update 2 (05.12.2018)
+
+Switched to the Hermit theme. Additionally changed the hosting to a dedicated Webserver instead of Gitlab Pages.
