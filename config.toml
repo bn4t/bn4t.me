@@ -6,6 +6,7 @@ theme = "hermit"
 pygmentsCodefences  = true
 pygmentsUseClasses = true
 enableEmoji = true # Shorthand emojis in content files - https://gohugo.io/functions/emojify/
+enableRobotsTXT = true
 
 [author]
   name = "bn4t"
