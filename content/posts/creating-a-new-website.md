@@ -1,6 +1,6 @@
 ---
 title: "Creating a new website"
-date: 2018-06-04
+date: 2018-06-05
 tags: ["hugo","web","netlify"]
 draft: false
 ---
