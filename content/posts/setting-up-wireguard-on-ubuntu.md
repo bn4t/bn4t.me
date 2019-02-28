@@ -27,8 +27,8 @@ Since Wireguard uses a kernel module we also need to install the `linux-headers`
 
 ````
 sudo add-apt-repository ppa:wireguard/wireguard
-apt-get update
-apt-get install wireguard-dkms wireguard-tools linux-headers-$(uname -r)
+sudo apt-get update
+sudo apt-get install wireguard-dkms wireguard-tools linux-headers-$(uname -r)
 ````
 
 ### Generate the server keys
@@ -125,8 +125,8 @@ net.ipv4.ip_forward=1
 To make this configuration change permanent we need to execute following commands:
 
 ````
-sysctl -p
-echo 1 > /proc/sys/net/ipv4/ip_forward
+sudo sysctl -p
+sudo echo 1 > /proc/sys/net/ipv4/ip_forward
 ````
 
 
@@ -146,21 +146,21 @@ sudo iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 Allowing incoming VPN traffic on the listening port
 
 ````
-iptables -A INPUT -p udp -m udp --dport 5555 -m conntrack --ctstate NEW -j ACCEPT
+sudo iptables -A INPUT -p udp -m udp --dport 5555 -m conntrack --ctstate NEW -j ACCEPT
 ````
 
 
 Allow forwarding of packets that stay in the VPN tunnel
 
 ````
-iptables -A FORWARD -i wg0 -o wg0 -m conntrack --ctstate NEW -j ACCEPT
+sudo iptables -A FORWARD -i wg0 -o wg0 -m conntrack --ctstate NEW -j ACCEPT
 ````
 
 
 Set up masquerading for VPN packets so they have the server's source address
 
 ````
-iptables -t nat -A POSTROUTING -s 10.200.200.0/24 -o eth0 -j MASQUERADE
+sudo iptables -t nat -A POSTROUTING -s 10.200.200.0/24 -o eth0 -j MASQUERADE
 ````
 
 
