@@ -56,5 +56,5 @@ enableRobotsTXT = true
     
 [[menu.main]]
     name = "Services"
-    url = "services"
+    url = "/services/"
     weight = 2
