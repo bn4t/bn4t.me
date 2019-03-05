@@ -2,11 +2,8 @@
 title: "TLS 1.3 arrived!"
 date: 2019-03-05
 tags: ["tls","caddy","web"]
-draft: true
+draft: false
 ---
-
-## TLS 1.3 arrived!
-
 Feburary 25th [Go 1.12 got released](https://blog.golang.org/go1.12) with opt-in support for TLS 1.3.
 
 With the [0.11.5 release](https://github.com/mholt/caddy/releases/tag/v0.11.5) of caddy which builds on Go 1.12, [caddy finally supports TLS 1.3](https://github.com/mholt/caddy/commit/72d0debde6bf01b5fdce0a4f3dc2b35cba28241a).
@@ -19,6 +16,7 @@ This also means that this site and (most of) the services I run, now support TLS
 TLS 1.3 is the latest version of the TLS protocol, with many improvements.
 
 These improvements include:
+
 - Mandatory perfect forward secrecy
 - Weak hash functions and ciphers got removed
 - Dropped support for many insecure or obsolete features including compression, renegotiation, non-AEAD ciphers, non-PFS key exchange, custom DHE groups and more
