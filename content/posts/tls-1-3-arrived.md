@@ -4,9 +4,7 @@ date: 2019-03-05
 tags: ["tls","caddy","web"]
 draft: false
 ---
-Feburary 25th [Go 1.12 got released](https://blog.golang.org/go1.12) with opt-in support for TLS 1.3.
-
-With the [0.11.5 release](https://github.com/mholt/caddy/releases/tag/v0.11.5) of caddy which builds on Go 1.12, [caddy finally supports TLS 1.3](https://github.com/mholt/caddy/commit/72d0debde6bf01b5fdce0a4f3dc2b35cba28241a).
+Feburary 25th [Go 1.12 got released](https://blog.golang.org/go1.12) with opt-in support for TLS 1.3. With the [0.11.5 release](https://github.com/mholt/caddy/releases/tag/v0.11.5) of caddy which builds on Go 1.12, [caddy finally supports TLS 1.3](https://github.com/mholt/caddy/commit/72d0debde6bf01b5fdce0a4f3dc2b35cba28241a).
 
 This also means that this site and (most of) the services I run, now support TLS 1.3.
 
