@@ -13,7 +13,7 @@ With the [0.11.5 release](https://github.com/mholt/caddy/releases/tag/v0.11.5) o
 
 This also means that this site and (most of) the services I run, now support TLS 1.3.
 
-![This site now supports TLS1.3! Yay!](/img/ssllabs-bn4t-me-tls1-3.png)
+![This site now supports TLS1.3! Yay!](/img/ssllabs-bn4t-me-tls-1-3.png)
 
 
 TLS 1.3 is the latest version of the TLS protocol, with many improvements.
