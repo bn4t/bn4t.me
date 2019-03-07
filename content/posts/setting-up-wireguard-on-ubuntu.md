@@ -55,10 +55,16 @@ This config file looks like this:
 ````
 [Interface]
 # The address and CIDR of the virtual interface wg0
-Address = 10.200.200.1/24
+Address = 10.0.0.1/24
 
 # Replace this with the private key found in /etc/wireguard/privatekey
 PrivateKey = <insert server_private_key>
+
+# Add firewall forwarding and NAT rules when the wireguard interface starts
+PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+# Remove firewall forwarding and NAT rules when the wireguard interface stops
+PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 
 # This is the listen port of the wireguard server. Can be any port you wish.
 ListenPort = 5555
@@ -82,7 +88,7 @@ This config file looks like this:
 ````
 [Interface]
 # The address and CIDR of the virtual interface wg0
-Address = 10.200.200.2/32
+Address = 10.0.0.2/32
 
 # Replace this with the private key found in /etc/wireguard/privatekey
 PrivateKey = <insert client_private_key>
@@ -110,7 +116,7 @@ Before we can start the VPN tunnel we need to add following section to the `/etc
 PublicKey = <insert client_public_key>
 
 # Define which IPs that the client is allowed to be in the virtual network
-AllowedIPs = 10.200.200.2/32
+AllowedIPs = 10.0.0.2/32
 ````
 
 
@@ -132,46 +138,11 @@ sudo echo 1 > /proc/sys/net/ipv4/ip_forward
 
 #### Configure firewall rules on the server
 
-We need to set up a few firewall rules to manage our VPN traffic.
-
-
-Track VPN connection
+To enable allow wireguard connections we need to allow port `5555` in the firewall:
 
 ````
-sudo iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
-sudo iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+sudo ufw allow 5555
 ````
-
-
-Allowing incoming VPN traffic on the listening port
-
-````
-sudo iptables -A INPUT -p udp -m udp --dport 5555 -m conntrack --ctstate NEW -j ACCEPT
-````
-
-
-Allow forwarding of packets that stay in the VPN tunnel
-
-````
-sudo iptables -A FORWARD -i wg0 -o wg0 -m conntrack --ctstate NEW -j ACCEPT
-````
-
-
-Set up masquerading for VPN packets so they have the server's source address
-
-````
-sudo iptables -t nat -A POSTROUTING -s 10.200.200.0/24 -o eth0 -j MASQUERADE
-````
-
-
-To make these IPtable rules persistent we need to install the `iptables-persistent` package and enable it on boot.
-
-````
-sudo apt-get install iptables-persistent
-sudo systemctl enable netfilter-persistent
-sudo netfilter-persistent save
-````
-
 
 
 #### Enable the Wireguard Interfaces
@@ -181,7 +152,6 @@ To enable the Wireguard interfaces we need to execute on both the client and the
 ````
 sudo wg-quick up wg0
 ````
-
 
 
 We can check the state of the VPN connection by executing `sudo wg`.
@@ -197,7 +167,7 @@ To enable the Wireguard interfaces automatically on boot you can execute followi
 sudo systemctl enable wg-quick@wg0
 ````
 
-You should now have a secure VPN connection in place. You can confirm this by checking your IP on sites such as https://icanhazip.com.
+You should now have a secure VPN connection in place. You can confirm this by checking your IP with services such as https://ip.bn4t.me.
 
 If you want to disconnect from the VPN you have to disable the Wireguard interface.
 ````
