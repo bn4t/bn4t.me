@@ -18,8 +18,6 @@ enableRobotsTXT = true
 
 [taxonomies]
   tag = "tags"
-  category = "" # Categories are disabled by default.
-
 
 [params]
   homeSubtitle = "A personal website"
@@ -48,13 +46,13 @@ enableRobotsTXT = true
     url = "mailto:me@bn4t.me"
 
 
-
-[[menu.main]]
+[menu]
+  [[menu.main]]
     url = "/posts/"
     name = "Posts"
     weight = 1
     
-[[menu.main]]
+  [[menu.main]]
     name = "Services"
     url = "/services/"
     weight = 2
