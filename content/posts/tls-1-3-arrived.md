@@ -8,7 +8,7 @@ Feburary 25th [Go 1.12 got released](https://blog.golang.org/go1.12) with opt-in
 
 This also means that this site and (most of) the services I run, now support TLS 1.3.
 
-![This site now supports TLS1.3! Yay!](/img/ssllabs-bn4t-me-tls-1-3.png)
+![This site now supports TLS1.3! Yay!](/img/ssllabs-bn4t-me-tls-1-3.webp)
 
 
 TLS 1.3 is the latest version of the TLS protocol, with many improvements.
