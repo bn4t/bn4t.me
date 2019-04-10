@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /img/
+Sitemap: https://bn4t.me/sitemap.xml

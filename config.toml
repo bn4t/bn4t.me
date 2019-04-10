@@ -42,6 +42,10 @@ enableRobotsTXT = true
     url = "https://twitter.com/_bn4t"
 
   [[params.social]]
+    name = "matrix"
+    url = "https://matrix.to/#/@bn4t:matrix.org"
+
+  [[params.social]]
     name = "email"
     url = "mailto:me@bn4t.me"
 
