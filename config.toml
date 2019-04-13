@@ -43,7 +43,7 @@ enableRobotsTXT = true
 
   [[params.social]]
     name = "matrix"
-    url = "https://matrix.to/#/@bn4t:matrix.org"
+    url = "https://matrix.to/#/@bn4t:matrix.bn4t.me"
 
   [[params.social]]
     name = "email"
