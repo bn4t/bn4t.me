@@ -1,0 +1,15 @@
+kind: pipeline
+name: default
+
+
+steps:
+- name: submodules
+  image: docker:git
+  commands:
+  - git submodule update --init --recursive
+
+
+- name: build
+  image: registry.gitlab.com/pages/hugo:latest
+  commands:
+  - hugo
