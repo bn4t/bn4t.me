@@ -25,6 +25,7 @@ steps:
   - docker build --pull -t registry.bn4t.me/bn4t/bn4t.me .
   - docker push registry.bn4t.me/bn4t/bn4t.me 
 
+
 services:
 - name: docker
   image: docker:dind
