@@ -30,8 +30,8 @@ enableRobotsTXT = true
   # Social Icons
   # Check https://github.com/Track3/hermit#social-icons for more info.
   [[params.social]] 
-    name = "gitlab" 
-    url = "https://git.bn4t.me/root"
+    name = "code" 
+    url = "https://git.bn4t.me/bn4t"
 
   [[params.social]]
     name = "github"
