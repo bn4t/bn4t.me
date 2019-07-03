@@ -240,12 +240,20 @@ This config tells LND to use our bitcoind instance as backend.
 
 **Make sure you edit alle the `YOUR_EXTERNAL_IP` values.**
 
+Restart your LND conatiner to apply the configuration.
+
+Execute `lncli create` to create a new wallet. This is the wallet LND will be using.
+You’ll be asked to input and confirm a wallet password, which must be longer than 8 characters.
+You also have the option to add a passphrase to your cipher seed.
+
+Be sure to save the password in a password manager or similar. This password is needed to access the bitcoins in LNDs wallet.
 
 ### Connect using ZeusLN
 
 Next we'll connect to our node using ZeusLN.
+Make sure your LND wallet is unlocked by running `lncli unlock`.
 
-Execute in your LND container `lndconnect -p 8080` to generate a QR code which you can scan from the ZeusLN app.
+Now execute in the LND container `lndconnect -p 8080` to generate a QR code which you can scan from the ZeusLN app.
 
 Alternatively if the QR code isn't readable you can use `lndconnect -p 8080 -j` to generate an URL instead of a QR code. Paste this URL into an external QR code creator (make sure it doesn't send the data to a server; this URL contains the key to your LND node!) and scan it from the ZeusLN app.
 
