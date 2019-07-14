@@ -122,18 +122,20 @@ AllowedIPs = 10.0.0.2/32
 
 #### Enable IP forwarding on the server
 
-To enable IP forwarding on the server we need to edit the `/etc/sysctl.conf` file and set following line:
+
+To enable IP forwarding and make it persistent we need to edit the `/etc/sysctl.conf` file and set following line:
 
 ````
 net.ipv4.ip_forward=1
 ````
 
-To make this configuration change permanent we need to execute following commands:
+To apply this configuration we need to execute:
 
 ````
 sudo sysctl -p
-sudo echo 1 > /proc/sys/net/ipv4/ip_forward
 ````
+
+This makes sure that the configuration persists after a reboot.
 
 
 #### Configure firewall rules on the server
