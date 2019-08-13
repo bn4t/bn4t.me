@@ -20,7 +20,7 @@ steps:
   - name: dockersock
     path: /var/run
   commands:
-  - sleep 5 # give docker enough time to start
+  - sleep 20 # give docker enough time to start
   - docker login -u $USERNAME -p $PASSWORD registry.bn4t.me
   - docker build --pull -t registry.bn4t.me/bn4t/bn4t.me .
   - docker push registry.bn4t.me/bn4t/bn4t.me 
