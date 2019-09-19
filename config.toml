@@ -55,8 +55,19 @@ enableRobotsTXT = true
     url = "/posts/"
     name = "Posts"
     weight = 1
+  
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects"
+    weight = 2
+    
     
   [[menu.main]]
     name = "Services"
     url = "/services/"
-    weight = 2
+    weight = 3
+
+  [[menu.main]]
+    name = "About"
+    url = "/about"
+    weight = 4
