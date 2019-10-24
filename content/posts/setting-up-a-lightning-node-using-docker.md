@@ -238,7 +238,7 @@ bitcoind.zmqpubrawtx=tcp://bitcoin:28333
 
 This config tells LND to use our bitcoind instance as backend.
 
-**Make sure you edit alle the `YOUR_EXTERNAL_IP` values.**
+**Make sure you edit all the `YOUR_EXTERNAL_IP` values.**
 
 Restart your LND conatiner to apply the configuration.
 
