@@ -5,8 +5,6 @@ tags: ["hugo","web","netlify"]
 draft: false
 ---
 
-## Creating a new website
-
 Finally, after delaying it for a long time, I did it. I finally updated my website!
 
 In contrast to my old website I took a way cleaner approach. Instead of messing around with pure html and css (which I'm not really good at) I went and invested some time looking into [hugo](https://gohugo.io).
