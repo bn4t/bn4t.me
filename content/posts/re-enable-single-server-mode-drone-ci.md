@@ -5,8 +5,6 @@ tags: ["drone","continous integration"]
 draft: false
 ---
 
-## Re-enable single server mode in Drone CI
-
 Drone CI comes since version [1.5.0](https://discourse.drone.io/t/1-5-0-release-notes/5797) with multi-server mode (in which builds are processed by external CI runners) activated by default.
 
 This can be problematic if you're used to drone running in single server mode.
