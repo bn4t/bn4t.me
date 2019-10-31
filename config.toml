@@ -39,7 +39,7 @@ enableRobotsTXT = true
 
   [[params.social]]
     name = "activitypub"
-    url = "https://social.bn4t.me/bn4t"
+    url = "https://social.smalltech.space/bn4t"
 
   [[params.social]]
     name = "matrix-org"
