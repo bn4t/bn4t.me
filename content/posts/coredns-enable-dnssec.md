@@ -69,8 +69,8 @@ The response should look somewhat like this:
 # format: 
 # <domain> IN DS <tag> <algorithm> <digest type> <digest>
 
-example.com. IN DS 60323 13 1 3F4DE2555510AAFDD03E14F0F3C49F6DFB599844
-example.com. IN DS 60323 13 2 CB4D7ED047B5875D87EEA31C823129DB68F628F4D2E0A784BC5FCFE1FCF4E266
+example.org. IN DS 60323 13 1 3F4DE2555510AAFDD03E14F0F3C49F6DFB599844
+example.org. IN DS 60323 13 2 CB4D7ED047B5875D87EEA31C823129DB68F628F4D2E0A784BC5FCFE1FCF4E266
 ````
 
 Choose the second record with the longer digest (SHA256). The other one uses SHA1 which is no longer deemed secure.
@@ -81,4 +81,4 @@ After setting the record it can take up to 1-2 days for it to appear in the DNS.
 
 To check if everything is set up correctly you can use an online dnssec check tool like [the one from Verisign](https://dnssec-debugger.verisignlabs.com/)
 
-If everything works: Congratulations! Your domain now supports dnssec.
+If all checks are successful: Congratulations! Your domain now supports dnssec.
