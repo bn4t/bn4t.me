@@ -1,5 +1,12 @@
 # bn4t.me
 
-[![Build Status](https://drone.bn4t.me/api/badges/bn4t/bn4t.me/status.svg)](https://drone.bn4t.me/bn4t/bn4t.me)
 
 https://bn4t.me
+
+
+## How to build
+
+1. Clone the repository
+2. `git submodule update --init --recursive`
+3. `hugo`
+
