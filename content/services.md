@@ -1,7 +1,8 @@
-+++
-title = "Services"
-date = "2019-01-31"
-+++
+---
+title: "Services"
+hideMeta: true
+disableShare: true
+---
 
 List of public services I operate:
 

@@ -1,0 +1,84 @@
+baseURL: "https://bn4t.me"
+title: bn4t.me
+paginate: 5
+theme: hugo-PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+
+minify:
+    disableXML: true
+    minifyOutput: true
+
+params:
+    env: production # to enable opengraph, twitter-cards and schema.
+    title: bn4t.me
+    description: "ExampleSite description"
+    author: Me
+    # author: ["Me", "You"] # multiple authors
+
+    images: "<link or path of image for opengraph, twitter-cards>"
+
+    ShowReadingTime: true
+    ShowShareButtons: true
+    comments: false
+    defaultTheme: auto
+    disableThemeToggle: false
+    disableSpecial1stPost: false
+
+    assets:
+        favicon: "/favicon.ico"
+        favicon16x16: "/favicon-16x16.png"
+        favicon32x32: "/favicon-32x32.png"
+        apple_touch_icon: "/apple-touch-icon.png"
+        safari_pinned_tab: "/safari-pinned-tab.svg"
+
+    label:
+        text: "bn4t.me"
+        icon: /apple-touch-icon.png
+        iconHeight: 35
+
+    # profile-mode
+    profileMode:
+        enabled: false # needs to be explicitly set
+        title: ExampleSite
+        # imageUrl: '<img location>'
+        # imageTitle: my image
+        buttons:
+            - name: Posts
+              url: posts
+            - name: Tags
+              url: tags
+
+    # home-info mode
+    homeInfoParams:
+        Title: "Hi there \U0001F44B"
+        Content: Welcome to my little personal blog. From time to time I'll be writing down my thoughts on here.
+
+
+    socialIcons:
+        - name: github
+          url: "https://github.com/"
+        - name: email
+          url: "mailto:me@bn4t.me"
+        - name: rss
+          url: "https://bn4t.me/index.xml"
+ 
+
+menu:
+    main:
+        - identifier: projects
+          name: projects
+          url: /projects/
+          weight: 10
+        - identifier: services
+          name: services
+          url: /services/
+          weight: 15
+        - identifier: tags
+          name: tags
+          url: /tags/
+          weight: 20
