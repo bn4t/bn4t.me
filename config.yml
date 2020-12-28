@@ -56,7 +56,7 @@ params:
     # home-info mode
     homeInfoParams:
         Title: "Hi there \U0001F44B"
-        Content: Welcome to my little personal blog. From time to time I'll be writing down my thoughts on here.
+        Content: Welcome to my little personal blog. From time to time I'll be writing down my thoughts on here. All content on here is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 
     socialIcons:
