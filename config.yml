@@ -16,11 +16,11 @@ minify:
 params:
     env: production # to enable opengraph, twitter-cards and schema.
     title: bn4t.me
-    description: "ExampleSite description"
+    description: "Personal blog of bn4t."
     author: Me
     # author: ["Me", "You"] # multiple authors
 
-    images: "<link or path of image for opengraph, twitter-cards>"
+    images: "/android-chrome-512x512.png"
 
     ShowReadingTime: true
     ShowShareButtons: true
@@ -56,7 +56,7 @@ params:
     # home-info mode
     homeInfoParams:
         Title: "Hi there \U0001F44B"
-        Content: Welcome to my little personal blog. From time to time I'll be writing down my thoughts on here. All content on here is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+        Content: Welcome to my little personal blog. From time to time I'll be writing down my thoughts on here. All content is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 
     socialIcons:
