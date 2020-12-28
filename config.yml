@@ -61,7 +61,7 @@ params:
 
     socialIcons:
         - name: github
-          url: "https://github.com/"
+          url: "https://github.com/bn4t"
         - name: email
           url: "mailto:me@bn4t.me"
         - name: rss
