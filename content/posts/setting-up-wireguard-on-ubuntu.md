@@ -19,7 +19,10 @@ This is a tutorial on how to set up a Wireguard VPN on Ubuntu.
 
 
 
-### Add PPA
+## Add PPA
+
+> **Note:** As of 2021 this step is no longer nessecary. Ubuntu now has the wireguard packages in their universe repositories.
+
 
 To install the Wireguard packages we need to first add the Wireguard PPA. This is the official Wireguard PPA and can be [found on the Wireguard website](https://www.wireguard.com/install/). These packages need to be installed on the server and client.
 
@@ -31,7 +34,7 @@ sudo apt-get update
 sudo apt-get install wireguard-dkms wireguard-tools linux-headers-$(uname -r)
 ````
 
-### Generate the server keys
+## Generate the server keys
 
 To generate the keys for the wireguard server execute following command on your server host in the `/etc/wireguard/` directory:
 
@@ -44,7 +47,7 @@ This will create two files:
 A file called `privatekey` with the private key of the server and a file called `publickey` with the respective publickey.
 
 
-### Generate the Wireguard server config
+## Generate the Wireguard server config
 
 Next we will create the config for the Wireguard server.
 
@@ -71,7 +74,7 @@ ListenPort = 5555
 ````
 
 
-### Generate the Wireguard client config
+## Generate the Wireguard client config
 
 For this step you need to have Wireguard installed on your client. For Ubuntu you can follow the installation steps from above. Instructions for other platforms can be found on [the official Wireguard Website](https://www.wireguard.com/install/).
 
@@ -106,7 +109,7 @@ AllowedIPs = 0.0.0.0/0
 ````
 
 
-### Start the VPN tunnel
+## Start the VPN tunnel
 
 Before we can start the VPN tunnel we need to add following section to the `/etc/wireguard/wg0.conf` file on the Wireguard server:
 
@@ -120,7 +123,7 @@ AllowedIPs = 10.0.0.2/32
 ````
 
 
-#### Enable IP forwarding on the server
+## Enable IP forwarding on the server
 
 
 To enable IP forwarding and make it persistent we need to edit the `/etc/sysctl.conf` file and set following line:
@@ -129,16 +132,14 @@ To enable IP forwarding and make it persistent we need to edit the `/etc/sysctl.
 net.ipv4.ip_forward=1
 ````
 
-To apply this configuration we need to execute:
+To also apply this configuration for now without rebooting, we need to execute:
 
 ````
 sudo sysctl -p
 ````
 
-This makes sure that the configuration persists after a reboot.
 
-
-#### Configure firewall rules on the server
+## Configure firewall rules on the server
 
 To enable allow wireguard connections we need to allow port `5555` in the firewall:
 
@@ -147,7 +148,7 @@ sudo ufw allow 5555
 ````
 
 
-#### Enable the Wireguard Interfaces
+## Enable the Wireguard Interfaces
 
 To enable the Wireguard interfaces we need to execute on both the client and the server following command:
 
