@@ -65,8 +65,6 @@ params:
           url: "https://github.com/bn4t"
         - name: email
           url: "mailto:me@bn4t.me"
-        - name: discord
-          url: "https://discord.com/users/bn4t#4781" 
         - name: rss
           url: "https://bn4t.me/index.xml"
 menu:
