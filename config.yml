@@ -1,7 +1,7 @@
 baseURL: "https://bn4t.me"
 title: bn4t.me
 paginate: 5
-theme: hugo-PaperMod
+theme: PaperMod
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -19,7 +19,6 @@ params:
     title: bn4t.me
     description: "Personal blog of bn4t."
     author: Me
-    # author: ["Me", "You"] # multiple authors
 
     images: "/android-chrome-512x512.png"
 
@@ -59,10 +58,11 @@ params:
         Title: "Hi there \U0001F44B"
         Content: Welcome to my little personal blog. From time to time I'll be writing down my thoughts on here. All content is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
-
     socialIcons:
         - name: github
           url: "https://github.com/bn4t"
+        - name: "mastodon"
+          url: "https://nerdhut.ch/@benj" 
         - name: email
           url: "mailto:me@bn4t.me"
         - name: rss
