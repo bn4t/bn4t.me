@@ -1,7 +1,9 @@
 baseURL: "https://bn4t.me"
 title: bn4t.me
-paginate: 5
 theme: PaperMod
+
+pagination:
+    pagerSize: 5
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -17,10 +19,10 @@ params:
     defaultTheme: auto
     env: production # to enable opengraph, twitter-cards and schema.
     title: bn4t.me
-    description: "Personal blog of bn4t."
-    author: Me
+    description: "Personal blog."
+    author: bn4t
 
-    images: "/android-chrome-512x512.png"
+    images: ["/android-chrome-512x512.png"]
 
     ShowReadingTime: true
     ShowShareButtons: false
@@ -44,18 +46,10 @@ params:
     # profile-mode
     profileMode:
         enabled: false # needs to be explicitly set
-        title: ExampleSite
-        # imageUrl: '<img location>'
-        # imageTitle: my image
-        buttons:
-            - name: Posts
-              url: posts
-            - name: Tags
-              url: tags
 
     # home-info mode
     homeInfoParams:
-        Title: "Hi there \U0001F44B"
+        Title: "Hey \U0001F44B"
         Content: Welcome to my little personal blog. From time to time I'll be writing down my thoughts on here. All content is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
     socialIcons:
